@@ -1,0 +1,26 @@
+
+
+
+<% var title = 'Changer son mot de passe' %>
+<% include head %>
+<div class="w3-display-container " style="height:600px">
+<div class="w3-card-4 w3-display-middle" style="margin-top: 80px">
+
+<div class="w3-container w3-orange">
+<h1>Modifier votre profil</h1>
+
+<form class="w3-container w3-padding-large" method="post" action ="/modificationMdp">
+  <p>
+    <label>Ancien mot de passe :</label>
+    <input type="password" name="ancienMdp">
+  </p>
+  <p>
+    <label>Nouveau mot de passe :</label>
+    <input type="password" name="nouveauMdp">
+  </p>
+  <p>
+   <button class="w3-orange w3-btn w3-round-xxlarge" type="submit">Confirmer</button>
+  </p>
+</form>
+
+<% include foot %>

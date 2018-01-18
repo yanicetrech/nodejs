@@ -1,0 +1,32 @@
+
+
+<% var title = 'Suppression users' %>
+<% include head %>
+
+<h1>Supprimer un utilisateur de la base de donnée</h1>
+
+  <table border="1">
+    <tr>
+      <td>Nom</td>
+      <td>Prenom</td>
+      <td>Email</td>
+      <td>Mot de passe</td>
+      <td></td>
+    </tr>
+  <% listeUsers.forEach(function(users){ %>
+    <tr>
+      <td><%= users.nom %></td>
+      <td><%= users.prenom %></td>
+      <td><%= users.email %></td>
+      <td><%= users.mdp %></td>
+      <td><form method="post" action="/suppressionUtilisateur">
+            <input type="hidden" name="idUsers" value="<%=users.id%>">
+            <p>
+              <input type="submit" value="Supprimer">
+            </p>
+      </form> </td>
+    </tr>
+<% }); %>
+  <table>
+
+<% include foot %>

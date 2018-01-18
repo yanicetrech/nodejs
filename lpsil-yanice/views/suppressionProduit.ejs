@@ -1,0 +1,41 @@
+
+
+
+<% var title = 'supression article' %>
+<% include head %>
+
+  	<table>
+  		<tr>
+  			<td>
+  <% listeProduitForDelete.forEach(function(produit){ %>
+
+			    <table border = 1>
+				    <tr>
+				    	<td colspan="2" style="text-align: center;"><strong><%= produit.nomProduit%></strong></td>
+					</tr>
+			    	<tr>
+			    		<td> Description du produit </td>
+						<td> <%= produit.descriptionProduit %></td>
+					</tr>
+			    	<tr>
+			    		<td> Prix du produit </td>
+						<td> <%= produit.prixProduit %> €</td>
+					</tr>
+			    	<tr>
+			    		<td> Quantité restante pour ce produit </td>
+						<td> <%= produit.quantiteProduit %></td>
+					</tr>
+				</table>
+        <form method="post" action="/suppressionProduit">
+              <input type="hidden" name="idProduit" value="<%=produit.id%>">
+              <p>
+                <input type="submit" value="Supprimer">
+              </p>
+        </form>
+  <% }); %>
+
+			</td>
+		</tr>
+	</table>
+
+<% include foot %>

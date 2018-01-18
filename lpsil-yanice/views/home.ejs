@@ -1,0 +1,81 @@
+
+
+<% var title = 'HOME' %>
+<% include head %>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<header>
+<div class="w3-container w3-orange">
+  <div class="w3-display-container">
+    <div class="w3-bar">
+      <div class="w3-bar-item w3-text-white"><h4> Page d'achat </h4></div>
+          <form class="w3-right w3-bar-item" method="post">
+            <p id="ajoutButton"></p>
+            <p>
+              <input class="w3-btn w3-round-xxlarge" type="submit" value="Accéder à votre profil">
+
+               <ul class="w3-btn w3-round-xxlarge"; width:100%;">
+  <a class="w3-button w3-hover-orange" style ="text-decoration:none;color:white; width:100%" type = "submit" href="/connexion">deconnexion</a>
+</ul>
+            </p>
+          </form>
+    </div>
+  </div>
+</div>
+</header>
+
+  <p id="userName"></p>
+  <script>
+    if(document.cookie){
+      var s= document.getElementById("userName");
+    	s.value = document.cookie.replace(/name=|;|id=|/g,'');
+    }
+    </script>
+
+  	<table class="w3-table w3-striped">
+  		<tr>
+  			<td>
+  <% listeProduit.forEach(function(produit){ %>
+
+			    <table class="w3-table">
+				    <tr>
+				    	<td colspan="2" style="text-align: center;"><strong><%= produit.nomProduit%></strong></td>
+					</tr>
+			    	<tr>
+			    		<td> Description du produit </td>
+						<td> <%= produit.descriptionProduit %></td>
+					</tr>
+			    	<tr>
+			    		<td> Prix du produit </td>
+						<td> <%= produit.prixProduit %> €</td>
+					</tr>
+			    	<tr>
+			    		<td> Quantité restante pour ce produit </td>
+						  <td> <%= produit.quantiteProduit %></td>
+					</tr>
+          <tr>
+            <td colspan="2" style="text-align: center;"><a href="#"></a></td>
+          </tr>
+				</table>
+        <ul class="w3-ul" style="list_style_type:disc; width:100%;">
+  <a class="w3-button w3-hover-orange" style ="text-decoration:none;color:#cc0066; width:100%" href="#">Acheter</a>
+</ul>
+
+  <% }); %>
+
+			</td>
+		</tr>
+	</table>
+
+<script>
+function ajoutInput(){
+var insertion = document.getElementById("ajoutButton");
+var input = document.createElement("input");
+input.setAttribute("name","voirProfil");
+input.setAttribute("type","hidden");
+input.setAttribute("value",s.value);
+insertion.appendChild(input);
+}
+ajoutInput();
+</script>
+
+<% include foot %>

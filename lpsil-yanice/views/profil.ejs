@@ -1,0 +1,32 @@
+
+
+<% var title = 'profil' %>
+<% include head %>
+
+<h1>Votre profil</h1>
+
+<form method="post">
+  <p>
+    <input type="hidden" name="idUser" value="<%= id %>">
+  </p>
+  <p>
+    <input type="text" name="nomUser" value="<%= nom %>">
+  </p>
+  <p>
+    <input type="text" name="prenomUser" value="<%= prenom %>">
+  </p>
+  <p>
+    <input type="text" name="emailUser" value="<%= email %>">
+  </p>
+  <p>
+    <input type="submit" name="valider" value="Changer les informations du compte">
+  </p>
+</form>
+
+<h1> Modifier votre mot de passe </h1>
+
+<p> Vous pouvez modifier votre mot de passe par <a href="/modificationMdp">ici </a></p>
+
+<a href="/home">Retourner à l'espace d'achat</a>
+
+<% include foot %>

@@ -1,0 +1,29 @@
+
+<% var title = 'Ajout produit' %>
+<% include head %>
+
+<h1>Ajouter un produit à acheter</h1>
+
+<form method="post" action="/ajoutProduit">
+  <p>
+    <label>Nom du produit :</label>
+    <input type="text" name="nomProduit">
+  </p>
+  <p>
+    <label>Description : </label>
+    <textarea rows="4" cols="50" name="descriptionProduit"> </textarea>
+  </p>
+  <p>
+    <label>Prix du produit à l'unité en (euros) : </label>
+    <input type="number" name="prixProduit">
+  </p>
+  <p>
+    <label>Quantité  ?</label>
+    <input type="number" name="quantiteProduit">
+  </p>
+  <p>
+    <input type="submit" value="Ajouter ce produit">
+  </p>
+</form>
+
+<% include foot %>
